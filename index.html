@@ -252,18 +252,27 @@
                 <div class="text-center max-w-4xl mx-auto mt-10 animate-float">
                     <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-brand-dark/50 text-brand-cyan font-semibold text-sm mb-6 border border-brand-cyan/50 backdrop-blur-sm shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                         <div class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></div>
-                        CUỘC THI TRỰC TUYẾN • NĂM 2026
+                        <i class="fas fa-bolt text-brand-yellow mr-1"></i> CUỘC THI TRỰC TUYẾN • NĂM 2026
                     </div>
                     
+                    <!-- Cảnh báo minh bạch khi kiểm thử (chỉ hiện với ?test=1) -->
+                    <div id="test-mode-banner" class="hidden mx-auto mt-4 mb-6 max-w-3xl rounded-2xl border-2 border-amber-400 bg-amber-100 px-5 py-4 text-left text-amber-950 shadow-lg" role="status" aria-live="polite">
+                        <p class="m-0 text-base font-extrabold"><i class="fas fa-flask mr-2"></i>CHẾ ĐỘ KIỂM THỬ – KHÔNG XÉT GIẢI</p>
+                        <p class="m-0 mt-1 text-sm">Có thể vào thi và nộp bài trước thời gian mở chính thức. Bài kiểm thử được đánh dấu <strong>[TEST]</strong> trong cột họ tên trên hệ thống tiếp nhận. Cần loại bỏ các bản ghi thử trước khi thống kê và xét giải.</p>
+                    </div>
                     <!-- Tiêu đề mới cập nhật -->
                     <h2 class="font-tech text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-cyan to-blue-300 uppercase tracking-tight leading-tight mb-4 text-glow m-0 p-0">
                         CÔNG DÂN SỐ <br>
-                        HÒA KHÁNH <br>
-                        <span class="text-brand-yellow drop-shadow-[0_0_15px_rgba(255,193,7,0.5)] text-4xl md:text-5xl lg:text-6xl">NĂM 2026</span>
+                        <span class="text-white">HÒA KHÁNH</span> <br>
+                        <span class="text-brand-yellow drop-shadow-[0_0_15px_rgba(255,193,7,0.5)] text-4xl md:text-5xl lg:text-6xl">2026</span>
                     </h2>
                     
-                    <p class="mt-6 text-lg md:text-xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
-                        Nâng cao nhận thức, phổ cập kiến thức và kỹ năng số; khuyến khích người dân sử dụng dịch vụ công trực tuyến, VNeID, thanh toán số an toàn; góp phần xây dựng xã hội số văn minh.
+                    <div class="mx-auto mt-7 max-w-2xl rounded-2xl border border-brand-yellow/50 bg-brand-dark/60 px-5 py-4 backdrop-blur-sm shadow-[0_0_30px_rgba(255,193,7,0.10)]">
+                        <p class="text-brand-yellow font-bold text-lg md:text-2xl m-0"><i class="fas fa-quote-left text-sm opacity-60 mr-1"></i> Mỗi người dân là một công dân số <i class="fas fa-quote-right text-sm opacity-60 ml-1"></i></p>
+                    </div>
+                    <p class="mt-5 text-lg md:text-xl text-white font-semibold leading-relaxed">Hiểu đúng thủ tục <span class="text-brand-cyan mx-1">•</span> Thành thạo kỹ năng số <span class="text-brand-cyan mx-1">•</span> Giao dịch an toàn</p>
+                    <p class="mt-3 text-sm md:text-base text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
+                        Tìm hiểu cải cách hành chính, dịch vụ công trực tuyến, chuyển đổi số và kỹ năng công dân số; cùng xây dựng nền hành chính hiện đại, phục vụ Nhân dân.
                     </p>
 
                     <!-- START GỘP CHUNG 2 KHỐI THỜI GIAN VÀ ĐẾM NGƯỢC -->
@@ -275,7 +284,7 @@
                             </div>
                             <div>
                                 <div class="font-tech font-bold text-xl lg:text-2xl text-white">10/10 - 15/10/2026</div>
-                                <div class="text-xs lg:text-sm text-blue-300 mt-0.5">Thi trực tuyến trên đa nền tảng</div>
+                                <div class="text-xs lg:text-sm text-blue-300 mt-0.5">Dự thi từ 00:00 ngày 10/10 đến hết 15/10 (giờ Việt Nam)</div>
                             </div>
                         </div>
 
@@ -306,8 +315,8 @@
                                         <span class="text-[9px] lg:text-[10px] text-blue-300 uppercase mt-1">Giây</span>
                                     </div>
                                 </div>
-                                <div class="text-xs lg:text-sm text-brand-yellow mt-1 font-medium flex items-center justify-center md:justify-start gap-1.5">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping"></div> Đang diễn ra
+                                <div id="countdown-status" role="status" aria-live="polite" class="text-xs lg:text-sm text-brand-yellow mt-1 font-medium flex items-center justify-center md:justify-start gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping" aria-hidden="true"></span><span id="countdown-label">Sắp diễn ra</span>
                                 </div>
                             </div>
                         </div>
@@ -316,7 +325,7 @@
 
                     <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
                         <a href="#dang-ky" class="btn-shine bg-brand-yellow text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition duration-300 shadow-[0_0_30px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 transform hover:scale-105">
-                            <i class="fas fa-rocket"></i> KHỞI ĐỘNG DỰ THI
+                            <i class="fas fa-rocket"></i> THAM GIA DỰ THI
                         </a>
                         <a href="#the-le" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition duration-300 flex items-center justify-center gap-2">
                             XEM THỂ LỆ
@@ -334,10 +343,10 @@
                         <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-brand-cyan/10 text-brand-blue font-bold text-xs tracking-wider mb-6 border border-brand-cyan/30">
                             <i class="fas fa-list-ul"></i> THỂ LỆ TÓM TẮT
                         </div>
-                        <h3 class="text-3xl font-black text-brand-dark mb-4 font-tech uppercase m-0 p-0">SẴN SÀNG <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">CHINH PHỤC KIẾN THỨC</span></h3>
+                        <h3 class="text-3xl font-black text-brand-dark mb-4 font-tech uppercase m-0 p-0">SẴN SÀNG <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">TRỞ THÀNH CÔNG DÂN SỐ</span></h3>
                         
                         <!-- Đã sửa chữ "tự luận" thành "dự đoán" ở đây -->
-                        <p class="text-gray-600 mb-8 text-base">Bài thi gồm <strong class="text-brand-blue">20 câu trắc nghiệm</strong>, <strong class="text-brand-blue">01 câu khảo sát</strong> và <strong class="text-brand-blue">01 câu dự đoán</strong> (câu 21, 22 không tính điểm). Thang điểm tối đa: 100 điểm.</p>
+                        <p class="text-gray-600 mb-8 text-base">Khám phá <strong class="text-brand-blue">22 câu hỏi</strong>: 20 câu trắc nghiệm (5 điểm/câu), 01 câu khảo sát và 01 câu dự đoán (không tính điểm). Tổng điểm tối đa: <strong>100 điểm</strong>. Hoàn thành đầy đủ các câu để được xét bài thi hợp lệ.</p>
                         
                         <div class="grid sm:grid-cols-4 gap-4 mb-8">
                             <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-4 flex flex-col items-center text-center hover:-translate-y-1 transition duration-300">
@@ -374,7 +383,7 @@
                             </div>
                             <div class="flex gap-4 group">
                                 <div class="w-10 h-10 shrink-0 bg-brand-blue text-brand-cyan rounded-xl flex items-center justify-center font-black text-lg group-hover:bg-brand-cyan group-hover:text-brand-dark transition duration-300 shadow-md">4</div>
-                                <p class="text-sm text-gray-700 pt-2 m-0">Nhấn nút <strong>"Nộp bài dự thi"</strong> để hệ thống ghi nhận kết quả lưu vào Data.</p>
+                                <p class="text-sm text-gray-700 pt-2 m-0">Nhấn <strong>"Nộp bài dự thi"</strong>; hệ thống gửi thông tin và kết quả để kiểm tra, xác nhận theo Thể lệ.</p>
                             </div>
                         </div>
                     </div>
@@ -386,120 +395,72 @@
                                 <i class="fas fa-signal"></i> HỆ THỐNG TRỰC TUYẾN
                             </div>
                             <h3 class="font-tech text-4xl font-black mb-4 m-0 p-0">VÀO THI NGAY</h3>
-                            <p class="text-blue-200 text-sm mb-8 leading-relaxed">Nền tảng tối ưu trải nghiệm đa thiết bị. Tốc độ xử lý dữ liệu thời gian thực, đảm bảo minh bạch và chính xác.</p>
+                            <p class="text-blue-200 text-sm mb-8 leading-relaxed">Tham gia dễ dàng bằng điện thoại hoặc máy tính. Mỗi người dự thi chủ động thực hiện bài thi và chọn đáp án của mình.</p>
                             <a href="#dang-ky" class="block w-full btn-shine bg-brand-yellow text-brand-dark text-center py-4 rounded-xl font-bold hover:bg-yellow-400 transition shadow-[0_0_20px_rgba(255,193,7,0.3)] mb-8 no-underline">
-                                ĐĂNG KÝ VÀO PHÒNG THI <i class="fas fa-arrow-right ml-1"></i>
+                                THAM GIA DỰ THI <i class="fas fa-arrow-right ml-1"></i>
                             </a>
                         </div>
                         <ul class="space-y-3 text-sm text-blue-200 border-t border-white/10 pt-6 m-0 p-0 list-none">
                             <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-cyan"></i> 20 câu trắc nghiệm kiến thức</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-cyan"></i> Lưu đáp án tự động khi chuyển câu</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-cyan"></i> Chấm điểm tức thì sau khi nộp</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-cyan"></i> Có thể quay lại thay đổi đáp án trước khi nộp</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-cyan"></i> Hiển thị điểm trắc nghiệm sau khi gửi bài</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="giai-thuong" class="py-8 relative z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="tech-box p-8 sm:p-12">
-                    <div class="text-center mb-12">
-                        <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-brand-yellow/10 text-yellow-600 font-bold text-xs tracking-wider mb-4 border border-brand-yellow/30">
-                            <i class="fas fa-gift"></i> NỘI DUNG & GIẢI THƯỞNG
-                        </div>
-                        <h3 class="font-tech text-3xl md:text-4xl font-black text-brand-dark uppercase m-0 p-0">KIẾN THỨC THIẾT THỰC &bull; <span class="text-brand-blue">GIẢI THƯỞNG HẤP DẪN</span></h3>
-                        <p class="mt-4 text-gray-500 max-w-3xl mx-auto text-base">Nội dung bám sát kiến thức về chuyển đổi số, an toàn thông tin và kỹ năng số; góp phần giúp người dân ứng dụng công nghệ tiện lợi hơn.</p>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
-                        <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-inner">
-                            <div class="flex items-center gap-4 mb-8">
-                                <div class="w-12 h-12 bg-gradient-to-br from-brand-cyan to-brand-blue text-white rounded-xl flex items-center justify-center text-xl shadow-lg">
-                                    <i class="fas fa-book-open"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-gray-800 m-0 p-0">4 Nhóm Nội Dung</h4>
-                                    <p class="text-sm text-gray-500 m-0">Trọng tâm kiến thức năm 2026</p>
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition duration-300">
-                                    <span class="text-brand-cyan font-tech font-bold text-xl mb-1 block">01</span>
-                                    <h5 class="font-bold text-gray-800 mb-2 m-0">Chủ trương CĐS</h5>
-                                    <p class="text-xs text-gray-500 leading-relaxed m-0">Kiến thức cơ bản về Ngày Chuyển đổi số, Ngày Công dân số.</p>
-                                </div>
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition duration-300">
-                                    <span class="text-brand-cyan font-tech font-bold text-xl mb-1 block">02</span>
-                                    <h5 class="font-bold text-gray-800 mb-2 m-0">Dịch vụ công</h5>
-                                    <p class="text-xs text-gray-500 leading-relaxed m-0">Nộp hồ sơ, tra cứu, thanh toán trực tuyến thủ tục hành chính.</p>
-                                </div>
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition duration-300">
-                                    <span class="text-brand-cyan font-tech font-bold text-xl mb-1 block">03</span>
-                                    <h5 class="font-bold text-gray-800 mb-2 m-0">Kỹ năng số</h5>
-                                    <p class="text-xs text-gray-500 leading-relaxed m-0">Sử dụng VNeID, thanh toán điện tử, tiếp cận trí tuệ nhân tạo (AI).</p>
-                                </div>
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition duration-300">
-                                    <span class="text-brand-cyan font-tech font-bold text-xl mb-1 block">04</span>
-                                    <h5 class="font-bold text-gray-800 mb-2 m-0">An toàn mạng</h5>
-                                    <p class="text-xs text-gray-500 leading-relaxed m-0">Bảo vệ dữ liệu, nhận diện và phòng tránh lừa đảo trực tuyến.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-inner">
-                            <div class="flex items-center gap-4 mb-8">
-                                <div class="w-12 h-12 bg-gradient-to-br from-brand-yellow to-orange-500 text-white rounded-xl flex items-center justify-center text-xl shadow-lg">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-gray-800 m-0 p-0">Cơ cấu giải thưởng</h4>
-                                    <p class="text-sm text-gray-500 m-0">Kèm Giấy chứng nhận của UBND</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-brand-dark border border-brand-cyan/30 text-white rounded-xl p-6 text-center mb-6 relative overflow-hidden shadow-[0_0_20px_rgba(0,229,255,0.1)]">
-                                <div class="absolute inset-0 award-pattern opacity-10"></div>
-                                <i class="fas fa-crown text-5xl text-brand-yellow mb-3 relative z-10 drop-shadow-[0_0_10px_rgba(255,193,7,0.8)]"></i>
-                                <h5 class="font-tech text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-yellow relative z-10 mb-1 m-0">GIẢI THƯỞNG HẤP DẪN</h5>
-                                <p class="text-sm text-brand-cyan relative z-10 font-medium uppercase tracking-widest m-0">Trao bởi UBND Phường Hòa Khánh</p>
-                            </div>
-
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between bg-white p-4 rounded-xl border-l-4 border-l-yellow-500 shadow-sm">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 font-bold flex items-center justify-center">1</div>
-                                        <div><div class="font-bold text-gray-800">01 Giải Nhất</div></div>
-                                    </div>
-                                    <div class="font-black text-red-500 text-lg">2.000.000đ</div>
-                                </div>
-                                <div class="flex items-center justify-between bg-white p-4 rounded-xl border-l-4 border-l-gray-400 shadow-sm">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold flex items-center justify-center">2</div>
-                                        <div><div class="font-bold text-gray-800">02 Giải Nhì</div></div>
-                                    </div>
-                                    <div class="font-black text-red-500 text-lg">1.000.000đ/giải</div>
-                                </div>
-                                <div class="flex items-center justify-between bg-white p-4 rounded-xl border-l-4 border-l-orange-400 shadow-sm">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center">3</div>
-                                        <div><div class="font-bold text-gray-800">03 Giải Ba</div></div>
-                                    </div>
-                                    <div class="font-black text-red-500 text-lg">500.000đ/giải</div>
-                                </div>
-                                <div class="flex items-center justify-between bg-white p-4 rounded-xl border-l-4 border-l-brand-cyan shadow-sm">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-cyan-50 text-brand-cyan flex items-center justify-center"><i class="fas fa-star text-xs"></i></div>
-                                        <div><div class="font-bold text-gray-800">10 Giải Khuyến khích</div></div>
-                                    </div>
-                                    <div class="font-black text-red-500 text-lg">300.000đ/giải</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section id="giai-thuong" class="py-10 relative z-10">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="tech-box p-6 sm:p-10 lg:p-12">
+                <div class="text-center mb-9">
+                    <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-brand-yellow/10 text-yellow-700 font-bold text-xs tracking-wider mb-4 border border-brand-yellow/30"><i class="fas fa-lightbulb"></i> KIẾN THỨC THIẾT THỰC – GIẢI THƯỞNG Ý NGHĨA</div>
+                    <h3 class="font-tech text-3xl md:text-4xl font-black text-brand-dark uppercase m-0 p-0">04 NHÓM <span class="text-brand-blue">KIẾN THỨC CÔNG DÂN SỐ</span></h3>
+                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto text-sm md:text-base">Tìm hiểu cải cách hành chính, dịch vụ công, kỹ năng số và an toàn thông tin; mỗi kiến thức có thể áp dụng ngay trong cuộc sống.</p>
                 </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                <article class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-md transition duration-300">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center"><i class="fas fa-landmark"></i></span><span class="font-tech font-bold text-xl text-brand-blue">01</span></div>
+                    <h4 class="font-bold text-gray-800 m-0 mb-2 text-base">Cải cách hành chính</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed m-0">Thủ tục hành chính, trách nhiệm phục vụ, hướng dẫn và giải quyết hồ sơ đúng quy định.</p>
+                </article>
+                <article class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-md transition duration-300">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-700 text-white flex items-center justify-center"><i class="fas fa-mobile-alt"></i></span><span class="font-tech font-bold text-xl text-brand-blue">02</span></div>
+                    <h4 class="font-bold text-gray-800 m-0 mb-2 text-base">Công dân số và dịch vụ số</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed m-0">VNeID, dịch vụ công trực tuyến, thanh toán QR và vai trò Tổ Công nghệ số cộng đồng.</p>
+                </article>
+                <article class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-md transition duration-300">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 text-white flex items-center justify-center"><i class="fas fa-shield-alt"></i></span><span class="font-tech font-bold text-xl text-brand-blue">03</span></div>
+                    <h4 class="font-bold text-gray-800 m-0 mb-2 text-base">An toàn thông tin</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed m-0">Mật khẩu, OTP, dữ liệu cá nhân và nhận diện thủ đoạn lừa đảo trực tuyến.</p>
+                </article>
+                <article class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:border-brand-cyan hover:shadow-md transition duration-300">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-11 h-11 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-700 text-white flex items-center justify-center"><i class="fas fa-brain"></i></span><span class="font-tech font-bold text-xl text-brand-blue">04</span></div>
+                    <h4 class="font-bold text-gray-800 m-0 mb-2 text-base">AI và ứng xử số</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed m-0">Ứng dụng AI có trách nhiệm, kiểm chứng thông tin và ứng xử văn minh trên mạng.</p>
+                </article>
+                </div>
+                <div class="bg-brand-dark rounded-2xl p-6 sm:p-8 border border-brand-cyan/40 mb-7 relative overflow-hidden text-center">
+                    <div class="absolute inset-0 award-pattern opacity-20 pointer-events-none"></div>
+                    <div class="relative z-10"><i class="fas fa-award text-brand-yellow text-3xl mb-3"></i><h3 class="font-tech text-2xl sm:text-3xl font-black text-white m-0">CƠ CẤU GIẢI THƯỞNG NĂM 2026</h3><p class="text-blue-200 mt-2 mb-0 text-sm">03 nhóm giải thưởng theo Kế hoạch của UBND phường Hòa Khánh</p></div>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-5">
+<article class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 sm:p-6 flex flex-col">
+                        <div class="flex items-center gap-3 mb-2"><span class="w-11 h-11 flex items-center justify-center rounded-xl bg-blue-50 text-brand-blue"><i class="fas fa-users text-xl"></i></span><div><h4 class="font-bold text-brand-dark text-lg m-0">Giải tập thể</h4><p class="text-xs text-gray-500 m-0">Cơ quan, đơn vị trên địa bàn</p></div></div>
+                        <div class="mt-3 flex-1"><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">01 giải Nhất</span><strong class="text-brand-blue whitespace-nowrap text-sm">2.000.000đ</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">02 giải Nhì</span><strong class="text-brand-blue whitespace-nowrap text-sm">1.000.000đ/giải</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">03 giải Ba</span><strong class="text-brand-blue whitespace-nowrap text-sm">500.000đ/giải</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">05 giải Khuyến khích</span><strong class="text-brand-blue whitespace-nowrap text-sm">300.000đ/giải</strong></div></div>
+                    </article>
+<article class="bg-white rounded-2xl border border-amber-300 shadow-sm p-5 sm:p-6 flex flex-col">
+                        <div class="flex items-center gap-3 mb-2"><span class="w-11 h-11 flex items-center justify-center rounded-xl bg-amber-100 text-amber-700"><i class="fas fa-medal text-xl"></i></span><div><h4 class="font-bold text-brand-dark text-lg m-0">Giải Tổ dân phố số</h4><p class="text-xs text-gray-500 m-0">Tỷ lệ bài hợp lệ/nhân khẩu cao nhất</p></div></div>
+                        <div class="mt-3 flex-1"><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">01 giải Tổ dân phố số</span><strong class="text-brand-blue whitespace-nowrap text-sm">2.000.000đ</strong></div></div>
+                    </article>
+<article class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 sm:p-6 flex flex-col">
+                        <div class="flex items-center gap-3 mb-2"><span class="w-11 h-11 flex items-center justify-center rounded-xl bg-blue-50 text-brand-blue"><i class="fas fa-trophy text-xl"></i></span><div><h4 class="font-bold text-brand-dark text-lg m-0">Giải cá nhân</h4><p class="text-xs text-gray-500 m-0">Xếp hạng theo thể lệ cuộc thi</p></div></div>
+                        <div class="mt-3 flex-1"><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">01 giải Nhất</span><strong class="text-brand-blue whitespace-nowrap text-sm">1.500.000đ</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">02 giải Nhì</span><strong class="text-brand-blue whitespace-nowrap text-sm">1.000.000đ/giải</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">03 giải Ba</span><strong class="text-brand-blue whitespace-nowrap text-sm">500.000đ/giải</strong></div><div class="flex justify-between items-start gap-3 border-b border-gray-100 py-3 last:border-0"><span class="text-gray-700 font-semibold text-sm">05 giải Khuyến khích</span><strong class="text-brand-blue whitespace-nowrap text-sm">300.000đ/giải</strong></div></div>
+                    </article>
+                </div>
+                <p class="text-xs text-gray-500 mt-6 mb-0 leading-relaxed">Các giải thưởng được xét sau khi Ban Tổ chức đối chiếu dữ liệu và xác nhận bài dự thi hợp lệ. Giải cá nhân được xếp theo điểm trắc nghiệm, mức chênh lệch dự đoán và thời điểm nộp bài; giải Tổ dân phố số căn cứ tỷ lệ bài hợp lệ trên tổng số nhân khẩu theo Kế hoạch.</p>
             </div>
+          </div>
         </section>
 
         <section id="dang-ky" class="py-16 relative z-10 pb-32">
@@ -512,20 +473,21 @@
                         <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-brand-cyan/10 text-brand-blue font-bold text-xs tracking-wider mb-4 border border-brand-cyan/30">
                             <i class="fas fa-user-shield"></i> HỒ SƠ THÍ SINH
                         </div>
-                        <h3 class="font-tech text-3xl font-black text-brand-dark uppercase m-0 p-0">ĐĂNG KÝ THAM GIA</h3>
-                        <p class="mt-2 text-gray-500 text-base">Vui lòng khai báo thông tin chính xác để hệ thống định danh kết quả.</p>
+                        <h3 class="font-tech text-3xl font-black text-brand-dark uppercase m-0 p-0">SẴN SÀNG TRỞ THÀNH CÔNG DÂN SỐ</h3>
+                        <p class="mt-2 text-gray-500 text-base">Nhập đúng thông tin để xác thực bài thi và liên hệ trao giải (nếu đạt giải). Mỗi thí sinh chỉ được công nhận 01 bài dự thi hợp lệ; trường hợp nộp nhiều bài, ưu tiên bài hợp lệ đầu tiên theo Thể lệ.</p>
                     </div>
 
+                    <p id="registration-status" class="hidden rounded-xl bg-blue-50 border border-blue-200 p-3 text-sm text-brand-dark mb-6" role="status" aria-live="polite"></p>
                     <form id="form-dang-ky" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-bold text-brand-dark mb-2">Họ và tên <span class="text-red-500">*</span></label>
-                                <input type="text" id="input-hoTen" placeholder="Ví dụ: Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-cyan focus:ring-0 outline-none transition duration-300 bg-gray-50/50 text-brand-dark font-medium m-0" required>
+                                <input type="text" autocomplete="name" id="input-hoTen" placeholder="Ví dụ: Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-cyan focus:ring-0 outline-none transition duration-300 bg-gray-50/50 text-brand-dark font-medium m-0" required>
                             </div>
                             
                             <div>
                                 <label class="block text-sm font-bold text-brand-dark mb-2">Số điện thoại <span class="text-red-500">*</span></label>
-                                <input type="tel" id="input-soDienThoai" placeholder="Ví dụ: 0987xxxxxx" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-cyan focus:ring-0 outline-none transition duration-300 bg-gray-50/50 text-brand-dark font-medium m-0" required pattern="[0-9]{10}">
+                                <input type="tel" inputmode="numeric" autocomplete="tel" id="input-soDienThoai" placeholder="Ví dụ: 0987xxxxxx" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-cyan focus:ring-0 outline-none transition duration-300 bg-gray-50/50 text-brand-dark font-medium m-0" required pattern="[0-9]{10}">
                             </div>
                         </div>
 
@@ -617,12 +579,12 @@
                             <input type="text" id="input-donVi" placeholder="Tên trường học, cơ quan, doanh nghiệp..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-cyan focus:ring-0 outline-none transition duration-300 bg-gray-50/50 text-brand-dark font-medium m-0">
                         </div>
 
-                        <button type="submit" class="w-full btn-shine bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-800 transition shadow-[0_5px_20px_rgba(0,74,173,0.4)] mt-6 flex justify-center items-center gap-2 font-tech uppercase tracking-wider cursor-pointer border-0">
+                        <button type="submit" id="btn-vao-thi" class="w-full btn-shine bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-800 transition shadow-[0_5px_20px_rgba(0,74,173,0.4)] mt-6 flex justify-center items-center gap-2 font-tech uppercase tracking-wider cursor-pointer border-0">
                             TRUY CẬP PHÒNG THI <i class="fas fa-sign-in-alt"></i>
                         </button>
                         
                         <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1 m-0">
-                            <i class="fas fa-lock text-brand-cyan"></i> Dữ liệu được mã hóa và bảo mật bởi hệ thống.
+                            <i class="fas fa-lock text-brand-cyan"></i> Thông tin dự thi chỉ được sử dụng để xác thực, thống kê và xét giải theo Kế hoạch.
                         </p>
                     </form>
                 </div>
@@ -632,6 +594,9 @@
 
     <div id="view-quiz" class="hidden view-section pt-28 pb-32">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div id="test-mode-quiz-banner" class="hidden mb-5 rounded-xl border-2 border-amber-400 bg-amber-100 p-4 text-amber-950 shadow" role="status">
+                <strong><i class="fas fa-flask mr-1"></i> CHẾ ĐỘ KIỂM THỬ</strong> – Bài này không được xét giải; dữ liệu gửi đi có tiền tố [TEST] ở họ tên.
+            </div>
             <!-- Header phòng thi -->
             <div class="tech-box !rounded-b-none p-6 border-b border-gray-200 flex justify-between items-center shadow-lg bg-white/95">
                 <div class="flex items-center gap-4">
@@ -639,7 +604,7 @@
                         <i class="fas fa-laptop-code text-xl"></i>
                     </div>
                     <div>
-                        <h2 class="font-tech text-3xl font-black text-brand-dark m-0 p-0 leading-tight">PHÒNG THI SỐ</h2>
+                        <h2 class="font-tech text-3xl font-black text-brand-dark m-0 p-0 leading-tight">HÀNH TRÌNH KIẾN THỨC SỐ</h2>
                         <p class="text-gray-500 text-sm font-medium m-0">Thí sinh: <span id="display-name" class="font-bold text-brand-blue uppercase"></span></p>
                     </div>
                 </div>
@@ -675,7 +640,7 @@
                             NỘP BÀI DỰ THI <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
-                    <p id="quiz-security-note" class="text-xs text-gray-400 mt-4 text-center hidden relative z-10 font-medium m-0"><i class="fas fa-shield-alt text-brand-cyan"></i> Dữ liệu sẽ được gửi về máy chủ trung tâm.</p>
+                    <p id="quiz-security-note" class="text-xs text-gray-400 mt-4 text-center hidden relative z-10 font-medium m-0"><i class="fas fa-shield-alt text-brand-cyan"></i> Thông tin sẽ được gửi đến hệ thống tiếp nhận bài dự thi để đối chiếu theo Thể lệ.</p>
                 </div>
             </form>
         </div>
@@ -691,19 +656,20 @@
                     <i class="fas fa-check"></i>
                 </div>
                 
-                <h3 class="font-tech text-4xl font-black text-brand-dark mb-2 m-0 p-0">TRUYỀN TẢI THÀNH CÔNG!</h3>
-                <p class="text-gray-500 mb-8 font-medium m-0">CẢM ƠN BẠN ĐÃ THAM GIA CUỘC THI "CÔNG DÂN SỐ HÒA KHÁNH 2026"</p>
+                <div id="test-mode-result-banner" class="hidden mb-4 rounded-xl border-2 border-amber-400 bg-amber-100 p-3 text-sm font-semibold text-amber-900"><i class="fas fa-flask mr-1"></i> BÀI KIỂM THỬ – KHÔNG XÉT GIẢI. Hãy kiểm tra dòng [TEST] trong Google Sheets.</div>
+                <h3 id="result-heading" class="font-tech text-4xl font-black text-brand-dark mb-2 m-0 p-0">ĐÃ GỬI YÊU CẦU NỘP BÀI</h3>
+                <p class="text-gray-500 mb-8 font-medium m-0">Cảm ơn bạn đã tham gia Cuộc thi “Công dân số Hòa Khánh” 2026. Kết quả chính thức được xác nhận sau khi Ban Tổ chức kiểm tra dữ liệu. Nếu bài thi chưa xuất hiện trong hệ thống thống kê, vui lòng liên hệ Ban Tổ chức để được hỗ trợ.</p>
                 
                 <div class="bg-brand-dark rounded-2xl p-8 mb-8 border border-brand-cyan/30 shadow-[0_0_20px_rgba(0,229,255,0.2)] relative overflow-hidden group">
                     <div class="absolute inset-0 bg-brand-cyan/5 group-hover:bg-brand-cyan/10 transition duration-500"></div>
-                    <p class="text-sm text-brand-cyan uppercase font-bold tracking-widest mb-4 m-0">ĐIỂM SỐ ĐÁNH GIÁ CỦA BẠN</p>
+                    <p class="text-sm text-brand-cyan uppercase font-bold tracking-widest mb-4 m-0">ĐIỂM TRẮC NGHIỆM TRÊN TRÌNH DUYỆT</p>
                     <div class="font-tech text-7xl font-black text-white flex justify-center items-baseline gap-2 text-glow m-0">
                         <span id="display-score">0</span> <span class="text-3xl text-brand-cyan/50">/100</span>
                     </div>
                 </div>
 
                 <p class="text-sm text-gray-600 mb-10 italic border-l-4 border-brand-yellow pl-4 text-left bg-gray-50 p-4 rounded-r-lg m-0">
-                    "Mỗi kỹ năng số được hình thành hôm nay sẽ góp phần xây dựng một cộng đồng số an toàn, văn minh và thuận tiện hơn. Công dân số Hòa Khánh - Làm ngay, thấy ngay, dân hưởng thụ ngay."
+                    "Mỗi người dân là một công dân số. Hiểu đúng thủ tục – Thành thạo kỹ năng số – Giao dịch an toàn."
                 </p>
 
                 <button onclick="window.location.reload()" class="btn-shine bg-brand-blue text-white px-10 py-4 rounded-full font-bold hover:bg-blue-800 transition shadow-lg inline-flex items-center gap-2 cursor-pointer border-0">
@@ -732,29 +698,266 @@
         // LINK APP SCRIPT (Thay thế link mới của bạn vào đây)
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkRhZY1tC5TXCsaWcsLiyuj0c4kwjsmAOWcieJs21KqNNBQBYsjyKpzZsgR_QhQalv/exec';
 
-        // Bộ câu hỏi
+        // 20 câu hỏi đã được lựa chọn, rà soát theo Kế hoạch Cuộc thi
+        // Giữ nguyên khóa q1..q20 và đáp án A/B/C/D để tương thích Google Apps Script.
         const questions = [
-            { id: 1, text: "Ngày Chuyển đổi số quốc gia được tổ chức hằng năm vào ngày nào?", options: ["15/10", "10/10", "20/10", "02/9"], answer: "B" },
-            { id: 2, text: "Ngày Công dân số Việt Nam được tổ chức vào ngày nào?", options: ["01/10", "20/10", "15/10", "10/10"], answer: "C" },
-            { id: 3, text: "Theo Kế hoạch của phường Hòa Khánh, thông điệp nào sau đây đúng?", options: ["Mỗi người dân là một công dân số", "Chuyển đổi số chỉ dành cho cán bộ", "Chỉ thanh niên mới cần kỹ năng số", "Mỗi người dân phải là chuyên gia công nghệ"], answer: "A" },
-            { id: 4, text: "Chủ đề hoạt động hưởng ứng chuyển đổi số năm 2026 của phường Hòa Khánh là gì?", options: ["Hòa Khánh thông minh", "Công nghệ cho mọi nhà", "Người dân với công nghệ số", "Công dân số Hòa Khánh - Làm ngay, thấy ngay, dân hưởng thụ ngay"], answer: "D" },
-            { id: 5, text: "Ứng dụng VNeID chủ yếu phục vụ nội dung nào sau đây?", options: ["Chỉnh sửa ảnh", "Định danh điện tử và sử dụng các tiện ích liên quan", "Mua bán hàng hóa", "Chơi trò chơi trực tuyến"], answer: "B" },
-            { id: 6, text: "Dịch vụ công trực tuyến mang lại lợi ích thiết thực nào cho người dân?", options: ["Có thể thực hiện nhiều thủ tục hành chính trên môi trường mạng, giảm thời gian đi lại", "Mọi hồ sơ đều được giải quyết ngay", "Không cần cung cấp thông tin theo quy định", "Không còn phải thực hiện thủ tục hành chính"], answer: "A" },
-            { id: 7, text: "Hình thức nào sau đây là thanh toán không dùng tiền mặt?", options: ["Thanh toán hoàn toàn bằng tiền giấy", "Ghi nợ bằng giấy", "Đổi hàng lấy hàng", "Chuyển khoản, quét mã QR hoặc sử dụng phương thức thanh toán điện tử phù hợp"], answer: "D" },
-            { id: 8, text: "Tổ Công nghệ số cộng đồng có vai trò chủ yếu nào tại khu dân cư?", options: ["Thu các khoản phí của người dân", "Thay người dân thực hiện tất cả giao dịch", "Hướng dẫn, hỗ trợ người dân tiếp cận và sử dụng các kỹ năng, nền tảng số thiết yếu", "Quản lý hộ khẩu"], answer: "C" },
-            { id: 9, text: "Mô hình “15 phút cùng công dân số” của phường Hòa Khánh hướng tới mục tiêu nào?", options: ["Hướng dẫn trực tiếp để người dân hoàn thành ít nhất một thao tác số cụ thể", "Yêu cầu người dân sử dụng điện thoại 15 phút mỗi ngày", "Cho người dân xem video 15 phút", "Tổ chức họp tuyên truyền 15 phút"], answer: "A" },
-            { id: 10, text: "Cách tạo mật khẩu nào an toàn hơn?", options: ["Dùng ngày sinh", "Sử dụng mật khẩu đủ mạnh, khó đoán và không dùng chung cho nhiều tài khoản quan trọng", "Dùng “12345678”", "Dùng một mật khẩu cho tất cả tài khoản"], answer: "B" },
-            { id: 11, text: "Khi nhận được mã OTP của ngân hàng hoặc ứng dụng, bạn nên làm gì?", options: ["Gửi cho người tự xưng là nhân viên hỗ trợ", "Đăng lên mạng xã hội", "Chuyển cho bạn bè kiểm tra", "Giữ bí mật, không cung cấp cho người khác"], answer: "D" },
-            { id: 12, text: "Một người gọi điện tự xưng là cán bộ cơ quan nhà nước và yêu cầu chuyển tiền ngay để “xử lý hồ sơ”. Bạn nên làm gì?", options: ["Chuyển tiền ngay", "Cung cấp thông tin ngân hàng để xác minh", "Không chuyển tiền, chủ động kiểm tra thông tin qua kênh chính thức của cơ quan có thẩm quyền", "Làm theo vì người gọi biết họ tên mình"], answer: "C" },
-            { id: 13, text: "Bạn nhận được tin nhắn kèm đường link: “Bạn đã trúng quà, bấm vào đây để nhận”. Cách xử lý phù hợp là gì?", options: ["Bấm ngay trước khi hết hạn", "Không vội truy cập, kiểm tra nguồn gửi và xác minh tính an toàn của đường link", "Nhập thông tin ngân hàng để kiểm tra", "Chuyển tiếp cho nhiều người"], answer: "B" },
-            { id: 14, text: "Trước khi xác nhận thanh toán bằng mã QR, người dùng nên làm gì?", options: ["Kiểm tra đúng tên người nhận/đơn vị nhận và số tiền giao dịch", "Chỉ cần nhìn hình thức mã QR", "Tắt màn hình điện thoại", "Gửi ảnh mã QR cho người khác"], answer: "A" },
-            { id: 15, text: "Khi sử dụng AI hỗ trợ học tập hoặc công việc, cách làm nào phù hợp nhất?", options: ["Sao chép toàn bộ kết quả của AI mà không kiểm tra", "Nhập mật khẩu cá nhân để AI ghi nhớ", "Đưa tài liệu mật lên AI", "Sử dụng AI để hỗ trợ, kiểm tra lại kết quả và không cung cấp thông tin mật, dữ liệu cá nhân nhạy cảm"], answer: "D" },
-            { id: 16, text: "Một bài viết trên mạng xã hội có tiêu đề gây sốc nhưng không nêu rõ nguồn. Công dân số nên làm gì?", options: ["Chia sẻ ngay", "Khẳng định thông tin chắc chắn đúng", "Kiểm tra thông tin từ các nguồn chính thống, đáng tin cậy trước khi chia sẻ", "Đăng lại vào nhiều nhóm để hỏi"], answer: "C" },
-            { id: 17, text: "Bạn nhận được tin nhắn từ tài khoản của người thân yêu cầu chuyển tiền gấp. Việc nên làm trước tiên là gì?", options: ["Liên hệ trực tiếp với người thân bằng một kênh khác để xác minh", "Chuyển tiền vì đúng ảnh đại diện", "Gửi mã OTP cho người thân", "Chuyển một khoản nhỏ trước để kiểm tra"], answer: "A" },
-            { id: 18, text: "Khi sử dụng Wi-Fi công cộng, cách nào giúp giảm nguy cơ mất an toàn thông tin?", options: ["Đăng nhập tất cả tài khoản cá nhân", "Hạn chế giao dịch nhạy cảm, tránh đường link đáng ngờ và bảo vệ thông tin đăng nhập", "Tắt tính năng bảo mật", "Thực hiện ngay giao dịch ngân hàng quan trọng"], answer: "B" },
-            { id: 19, text: "Một website có giao diện gần giống trang của cơ quan nhà nước nhưng địa chỉ truy cập bất thường và yêu cầu nhập mật khẩu, OTP. Bạn nên làm gì?", options: ["Nhập thông tin vì có logo cơ quan nhà nước", "Tiếp tục vì giao diện quen thuộc", "Dừng thao tác và kiểm tra chính xác địa chỉ website hoặc kênh chính thức trước khi cung cấp thông tin", "Nhờ người khác nhập thử"], answer: "C" },
-            { id: 20, text: "Tình huống nào thể hiện đầy đủ nhất kỹ năng của một “công dân số” có trách nhiệm?", options: ["Sử dụng nhiều mạng xã hội", "Biết dùng điện thoại để giải trí", "Chỉ sử dụng dịch vụ số khi có người làm giúp", "Biết khai thác dịch vụ số phục vụ đời sống, bảo vệ thông tin cá nhân, kiểm chứng thông tin, phòng tránh lừa đảo và ứng xử có trách nhiệm trên môi trường số"], answer: "D" }
-        ];
+            {
+                        "id": 1,
+                        "text": "Mục tiêu quan trọng của cải cách hành chính là gì?",
+                        "options": [
+                                    "Tăng số lượng thủ tục hành chính",
+                                    "Nâng cao hiệu lực, hiệu quả quản lý nhà nước và chất lượng phục vụ người dân, doanh nghiệp",
+                                    "Tăng thời gian xử lý hồ sơ",
+                                    "Tăng số lượng giấy tờ trong hồ sơ"
+                        ],
+                        "answer": "B",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 2,
+                        "text": "Khi hồ sơ thủ tục hành chính chưa đầy đủ theo quy định, cán bộ tiếp nhận cần xử lý thế nào?",
+                        "options": [
+                                    "Từ chối mà không giải thích lý do",
+                                    "Yêu cầu bổ sung bất kỳ giấy tờ nào cán bộ thấy cần",
+                                    "Hướng dẫn rõ thành phần hồ sơ cần bổ sung theo quy định",
+                                    "Yêu cầu người dân quay lại vào thời điểm khác"
+                        ],
+                        "answer": "C",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 3,
+                        "text": "Trong giải quyết thủ tục hành chính, việc làm nào thể hiện tinh thần lấy người dân làm trung tâm?",
+                        "options": [
+                                    "Hướng dẫn rõ ràng, đúng quy định và giải quyết đúng hạn",
+                                    "Yêu cầu người dân đi lại nhiều lần",
+                                    "Để người dân tự tìm hiểu mọi quy định",
+                                    "Chuyển trách nhiệm cho đơn vị khác"
+                        ],
+                        "answer": "A",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 4,
+                        "text": "Chỉ số nào phản ánh trực tiếp chất lượng phục vụ của cơ quan hành chính?",
+                        "options": [
+                                    "Số lượng văn bản nội bộ",
+                                    "Số cuộc họp của cơ quan",
+                                    "Số thiết bị được trang bị",
+                                    "Mức độ hài lòng của người dân, tổ chức"
+                        ],
+                        "answer": "D",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 5,
+                        "text": "Cơ quan nhà nước khai thác dữ liệu đã có để giảm việc yêu cầu người dân cung cấp lại giấy tờ. Việc này thể hiện tinh thần nào của chuyển đổi số?",
+                        "options": [
+                                    "Tăng cường sử dụng hồ sơ giấy",
+                                    "Khai thác, tái sử dụng dữ liệu theo quy định để nâng cao hiệu quả phục vụ",
+                                    "Giảm cung cấp dịch vụ công trực tuyến",
+                                    "Tăng thành phần hồ sơ thủ tục hành chính"
+                        ],
+                        "answer": "B",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 6,
+                        "text": "Khi hồ sơ gần đến hạn giải quyết nhưng phát sinh vướng mắc, cán bộ phụ trách cần làm gì?",
+                        "options": [
+                                    "Chờ đến khi hết hạn mới xử lý",
+                                    "Đợi người dân liên hệ mới giải quyết",
+                                    "Chủ động xử lý, phối hợp và kịp thời báo cáo khi có vướng mắc",
+                                    "Chuyển hồ sơ cho người khác mà không bàn giao"
+                        ],
+                        "answer": "C",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 7,
+                        "text": "Khi phát hiện quy trình giải quyết công việc có nhiều bước trung gian không cần thiết, cơ quan nên làm gì?",
+                        "options": [
+                                    "Rà soát và đề xuất đơn giản hóa theo thẩm quyền, đúng quy định",
+                                    "Giữ nguyên vì đã thực hiện nhiều năm",
+                                    "Bổ sung thêm bước kiểm tra",
+                                    "Không công khai quy trình"
+                        ],
+                        "answer": "A",
+                        "group": "Cải cách hành chính"
+            },
+            {
+                        "id": 8,
+                        "text": "Theo tinh thần Nghị quyết số 57-NQ/TW, người dân và doanh nghiệp được xác định có vai trò gì trong phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số?",
+                        "options": [
+                                    "Chỉ là đối tượng thụ hưởng",
+                                    "Chỉ là đối tượng cung cấp hồ sơ",
+                                    "Là đối tượng đứng ngoài quá trình chuyển đổi số",
+                                    "Là trung tâm, chủ thể, nguồn lực và động lực chính"
+                        ],
+                        "answer": "D",
+                        "group": "Công dân số và dịch vụ số"
+            },
+            {
+                        "id": 9,
+                        "text": "Ứng dụng VNeID chủ yếu phục vụ nội dung nào sau đây?",
+                        "options": [
+                                    "Chỉnh sửa ảnh và video",
+                                    "Định danh điện tử và sử dụng các tiện ích liên quan",
+                                    "Mua bán hàng hóa",
+                                    "Chơi trò chơi trực tuyến"
+                        ],
+                        "answer": "B",
+                        "group": "Công dân số và dịch vụ số"
+            },
+            {
+                        "id": 10,
+                        "text": "Dịch vụ công trực tuyến mang lại lợi ích thiết thực nào cho người dân?",
+                        "options": [
+                                    "Mọi hồ sơ đều được giải quyết ngay lập tức",
+                                    "Không cần cung cấp thông tin theo quy định",
+                                    "Có thể thực hiện nhiều thủ tục hành chính trên môi trường mạng, giảm thời gian đi lại",
+                                    "Không cần thực hiện thủ tục hành chính"
+                        ],
+                        "answer": "C",
+                        "group": "Công dân số và dịch vụ số"
+            },
+            {
+                        "id": 11,
+                        "text": "Trước khi xác nhận thanh toán bằng mã QR, người dùng nên làm gì?",
+                        "options": [
+                                    "Kiểm tra chính xác tên người nhận và số tiền giao dịch",
+                                    "Chỉ cần nhìn hình thức mã QR",
+                                    "Chuyển tiền trước rồi kiểm tra sau",
+                                    "Cung cấp mã OTP cho người nhận"
+                        ],
+                        "answer": "A",
+                        "group": "Công dân số và dịch vụ số"
+            },
+            {
+                        "id": 12,
+                        "text": "Tổ Công nghệ số cộng đồng có vai trò chủ yếu nào tại khu dân cư?",
+                        "options": [
+                                    "Thay cán bộ giải quyết tất cả thủ tục",
+                                    "Thu các khoản phí hành chính",
+                                    "Cấp tài khoản định danh cho toàn bộ người dân",
+                                    "Hướng dẫn, hỗ trợ người dân tiếp cận và sử dụng kỹ năng, dịch vụ số thiết yếu"
+                        ],
+                        "answer": "D",
+                        "group": "Công dân số và dịch vụ số"
+            },
+            {
+                        "id": 13,
+                        "text": "Trong chuyển đổi số, an ninh mạng, an ninh dữ liệu và an toàn thông tin có vai trò như thế nào?",
+                        "options": [
+                                    "Chỉ cần quan tâm khi xảy ra sự cố",
+                                    "Là yêu cầu xuyên suốt, không thể tách rời",
+                                    "Chỉ thuộc trách nhiệm của đơn vị cung cấp Internet",
+                                    "Không cần thiết khi dùng thiết bị cá nhân"
+                        ],
+                        "answer": "B",
+                        "group": "An toàn thông tin"
+            },
+            {
+                        "id": 14,
+                        "text": "Cách tạo mật khẩu nào giúp bảo vệ tài khoản tốt hơn?",
+                        "options": [
+                                    "Sử dụng ngày sinh làm mật khẩu",
+                                    "Dùng chung một mật khẩu cho mọi tài khoản",
+                                    "Đặt mật khẩu đủ mạnh, khó đoán và không dùng chung cho các tài khoản quan trọng",
+                                    "Công khai mật khẩu để dễ nhớ"
+                        ],
+                        "answer": "C",
+                        "group": "An toàn thông tin"
+            },
+            {
+                        "id": 15,
+                        "text": "Khi nhận được mã OTP từ ngân hàng hoặc ứng dụng, bạn cần làm gì?",
+                        "options": [
+                                    "Giữ bí mật, không cung cấp cho người khác",
+                                    "Gửi cho người tự xưng là nhân viên hỗ trợ",
+                                    "Đăng lên nhóm mạng xã hội",
+                                    "Chia sẻ cho bạn bè kiểm tra"
+                        ],
+                        "answer": "A",
+                        "group": "An toàn thông tin"
+            },
+            {
+                        "id": 16,
+                        "text": "Một người gọi điện tự xưng là cán bộ nhà nước và yêu cầu chuyển tiền ngay để xử lý hồ sơ. Bạn nên làm gì?",
+                        "options": [
+                                    "Chuyển tiền ngay để tránh chậm trễ",
+                                    "Cung cấp thông tin ngân hàng để xác minh",
+                                    "Làm theo vì người gọi biết họ tên mình",
+                                    "Không chuyển tiền và xác minh qua kênh chính thức của cơ quan có thẩm quyền"
+                        ],
+                        "answer": "D",
+                        "group": "An toàn thông tin"
+            },
+            {
+                        "id": 17,
+                        "text": "Bạn nhận được đường link thông báo trúng thưởng và yêu cầu nhập thông tin ngân hàng. Cách xử lý phù hợp là gì?",
+                        "options": [
+                                    "Truy cập ngay vì sợ hết hạn",
+                                    "Không vội truy cập, kiểm tra nguồn gửi và xác minh tính an toàn",
+                                    "Nhập thông tin ngân hàng để nhận quà",
+                                    "Chuyển tiếp cho người thân cùng tham gia"
+                        ],
+                        "answer": "B",
+                        "group": "An toàn thông tin"
+            },
+            {
+                        "id": 18,
+                        "text": "Khi sử dụng AI hỗ trợ học tập và công việc, cách làm nào phù hợp nhất?",
+                        "options": [
+                                    "Sao chép toàn bộ kết quả mà không kiểm tra",
+                                    "Cung cấp mật khẩu và thông tin bí mật cho AI",
+                                    "Sử dụng AI để hỗ trợ, kiểm chứng kết quả và bảo vệ dữ liệu cá nhân",
+                                    "Đưa mọi tài liệu nội bộ lên công cụ AI"
+                        ],
+                        "answer": "C",
+                        "group": "AI và ứng xử số"
+            },
+            {
+                        "id": 19,
+                        "text": "Khi gặp thông tin gây sốc trên mạng xã hội nhưng không rõ nguồn, công dân số nên làm gì?",
+                        "options": [
+                                    "Kiểm tra thông tin từ các nguồn chính thống, đáng tin cậy trước khi chia sẻ",
+                                    "Chia sẻ ngay để nhiều người biết",
+                                    "Khẳng định thông tin chắc chắn chính xác",
+                                    "Đăng lại vào nhiều nhóm để tăng lượt xem"
+                        ],
+                        "answer": "A",
+                        "group": "AI và ứng xử số"
+            },
+            {
+                        "id": 20,
+                        "text": "Hành động nào thể hiện đầy đủ nhất trách nhiệm của một công dân số?",
+                        "options": [
+                                    "Sử dụng nhiều mạng xã hội",
+                                    "Chỉ sử dụng điện thoại để giải trí",
+                                    "Để người khác thực hiện toàn bộ dịch vụ số thay mình",
+                                    "Chủ động sử dụng dịch vụ số, bảo vệ thông tin cá nhân, kiểm chứng thông tin và ứng xử có trách nhiệm trên môi trường mạng"
+                        ],
+                        "answer": "D",
+                        "group": "AI và ứng xử số"
+            }
+];
+
+        // ?test=1: cho phép kiểm thử trước thời gian mở, KHÔNG phải cơ chế bảo mật.
+        // Chỉ sử dụng trong giai đoạn chạy thử; trước khi công khai chính thức nên gỡ chế độ này.
+        const TEST_MODE = new URLSearchParams(window.location.search).get('test') === '1';
+        // Thời gian mở hệ thống theo Kế hoạch, sử dụng múi giờ Việt Nam (+07:00).
+        const QUIZ_START = new Date('2026-10-10T00:00:00+07:00').getTime();
+        const QUIZ_END_EXCLUSIVE = new Date('2026-10-16T00:00:00+07:00').getTime();
+        function quizIsOpen() {
+            const now = Date.now();
+            return TEST_MODE || (now >= QUIZ_START && now < QUIZ_END_EXCLUSIVE);
+        }
+        function quizNotOpenMessage() {
+            return Date.now() < QUIZ_START
+                ? 'Hệ thống dự thi sẽ mở từ 00:00 ngày 10/10/2026 (giờ Việt Nam).'
+                : 'Hệ thống đã kết thúc nhận bài từ 00:00 ngày 16/10/2026 (giờ Việt Nam).';
+        }
 
         let userInfo = {};
         
@@ -818,8 +1021,9 @@
                     <div class="question-card hidden" id="step-${index}">
                         <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden">
                             <div class="absolute top-0 left-0 w-1 h-full bg-brand-blue"></div>
+                            <p class="text-xs uppercase tracking-wider text-brand-blue font-bold mb-3"><i class="fas fa-layer-group mr-1"></i> ${q.group}</p>
                             <h4 class="text-lg md:text-xl font-bold text-brand-dark mb-8 leading-relaxed m-0">
-                                <span class="inline-block py-1 px-3 bg-brand-blue text-white rounded-lg text-sm mr-2 font-tech tracking-wider shadow-sm">CÂU ${q.id}</span> 
+                                <span class="inline-block py-1 px-3 bg-brand-blue text-white rounded-lg text-sm mr-2 font-tech tracking-wider shadow-sm">CÂU ${q.id}</span>
                                 ${q.text}
                             </h4>
                             <div class="grid sm:grid-cols-2 gap-4">
@@ -832,11 +1036,16 @@
 
             // Câu 21 (Step 20)
             const q21Options = [
-                "VNeID", "Dịch vụ công trực tuyến", "Thanh toán không dùng tiền mặt", 
-                "Nhận diện lừa đảo trực tuyến", "Bảo vệ tài khoản và dữ liệu cá nhân", 
-                "Sử dụng AI", "Hỗ trợ bán hàng/kinh doanh", "Nội dung khác"
+                "Sử dụng VNeID và các tiện ích định danh điện tử",
+                "Thực hiện dịch vụ công trực tuyến",
+                "Thanh toán không dùng tiền mặt",
+                "Nhận diện và phòng tránh lừa đảo trực tuyến",
+                "Bảo vệ tài khoản và dữ liệu cá nhân",
+                "Sử dụng trí tuệ nhân tạo (AI) an toàn",
+                "Ứng dụng công nghệ số trong học tập, kinh doanh",
+                "Nội dung khác"
             ];
-            
+
             let q21Html = '';
             q21Options.forEach((opt, idx) => {
                 q21Html += `
@@ -855,7 +1064,7 @@
                      </div>
                     <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gray-400"></div>
-                        <h4 class="text-md md:text-lg font-bold text-gray-800 mb-6 leading-relaxed m-0"><span class="text-gray-500 font-tech mr-2">CÂU 21:</span> Bạn mong muốn được Tổ Công nghệ số cộng đồng hỗ trợ nội dung nào nhất? <span class="block mt-2 text-brand-cyan font-normal text-sm bg-brand-cyan/10 px-3 py-1.5 rounded inline-block">(Có thể chọn nhiều phương án)</span></h4>
+                        <h4 class="text-md md:text-lg font-bold text-gray-800 mb-6 leading-relaxed m-0"><span class="text-gray-500 font-tech mr-2">CÂU 21:</span> Bạn mong muốn được Tổ Công nghệ số cộng đồng hỗ trợ những nội dung nào? <span class="block mt-2 text-brand-cyan font-normal text-sm bg-brand-cyan/10 px-3 py-1.5 rounded inline-block">(Có thể chọn nhiều phương án; chọn ít nhất 01 nội dung)</span></h4>
                         <div class="grid sm:grid-cols-2 gap-3">
                             ${q21Html}
                         </div>
@@ -872,11 +1081,12 @@
                         </div>
                         <h4 class="font-tech text-3xl font-black text-brand-yellow mb-4 m-0 p-0">Câu dự đoán</h4>
                         <p class="text-blue-100 mb-6 text-sm md:text-base leading-relaxed m-0">
-                            Theo bạn, có bao nhiêu người tham gia Cuộc thi trực tuyến "Công dân số Hòa Khánh" năm 2026?
+                            Theo bạn, đến hết ngày 15/10/2026, hệ thống sẽ ghi nhận tổng cộng bao nhiêu <strong>bài dự thi hợp lệ</strong> trong Cuộc thi trực tuyến “Công dân số Hòa Khánh” năm 2026?
                         </p>
                         <div class="mb-2">
-                            <label class="block text-sm font-bold text-white mb-2">Dự đoán số người tham gia:</label>
-                            <input type="number" name="q22" min="0" class="w-full md:w-1/2 p-4 rounded-xl border-2 border-transparent focus:border-brand-yellow outline-none text-brand-dark font-bold text-lg bg-white shadow-inner transition m-0" placeholder="Ví dụ: 1250" required>
+                            <label class="block text-sm font-bold text-white mb-2">Dự đoán số bài dự thi hợp lệ:</label>
+                            <input type="number" name="q22" min="0" step="1" inputmode="numeric" class="w-full md:w-1/2 p-4 rounded-xl border-2 border-transparent focus:border-brand-yellow outline-none text-brand-dark font-bold text-lg bg-white shadow-inner transition m-0" placeholder="Ví dụ: 1250" required>
+                            <p class="text-xs text-blue-100 mt-3">Câu dự đoán là tiêu chí phụ khi các thí sinh có cùng điểm trắc nghiệm.</p>
                         </div>
                     </div>
                 </div>
@@ -955,6 +1165,12 @@
                 }
             }
             
+            // Câu khảo sát (câu 21) bắt buộc chọn ít nhất một nội dung.
+            if (currentStep === 20 && !document.querySelector('input[name="q21"]:checked')) {
+                showToast('Vui lòng chọn ít nhất 01 nội dung khảo sát trước khi tiếp tục!');
+                return;
+            }
+
             // Chuyển câu
             if (currentStep < totalSteps - 1) {
                 currentStep++;
@@ -971,16 +1187,19 @@
 
         // Tự động chuyển qua trang mới khi User tích chọn (để tăng trải nghiệm người dùng)
         function autoNextStep() {
+            const selectedStep = currentStep;
             setTimeout(() => {
-                if(currentStep < 20) {
-                    nextStep();
-                }
-            }, 400); // Delay 400ms để user kịp nhìn thấy hiệu ứng chọn
+                if (currentStep === selectedStep && currentStep < 20) nextStep();
+            }, 400); // Chờ người dự thi quan sát lựa chọn
         }
 
         // Xử lý Form đăng ký
         document.getElementById('form-dang-ky').addEventListener('submit', function(e) {
             e.preventDefault();
+            if (!quizIsOpen()) {
+                showToast(quizNotOpenMessage());
+                return;
+            }
             
             userInfo = {
                 hoTen: document.getElementById('input-hoTen').value,
@@ -996,7 +1215,7 @@
 
             // Ẩn Menu ở Header khi vào thi
             document.getElementById('nav-menu').classList.add('hidden');
-            document.getElementById('header-subtitle').textContent = "Đang kết nối Server thi...";
+            document.getElementById('header-subtitle').textContent = TEST_MODE ? 'CHẾ ĐỘ KIỂM THỬ' : 'Đang tham gia hành trình công dân số';
             document.getElementById('header-subtitle').classList.replace('text-brand-cyan', 'text-yellow-400');
             
             switchView('view-landing', 'view-quiz');
@@ -1005,7 +1224,32 @@
         // Xử lý nộp bài
         document.getElementById('form-bai-thi').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+            if (!quizIsOpen()) {
+                showToast(quizNotOpenMessage());
+                return;
+            }
+            for (const question of questions) {
+                if (!document.querySelector(`input[name="q${question.id}"]:checked`)) {
+                    showToast(`Vui lòng hoàn thành câu ${question.id} trước khi nộp bài!`);
+                    currentStep = question.id - 1;
+                    showStep(currentStep);
+                    return;
+                }
+            }
+            if (!document.querySelector('input[name="q21"]:checked')) {
+                showToast('Vui lòng chọn ít nhất 01 nội dung khảo sát ở câu 21!');
+                currentStep = 20;
+                showStep(currentStep);
+                return;
+            }
+            const predictionValue = document.querySelector('input[name="q22"]').value.trim();
+            if (predictionValue === '' || !Number.isSafeInteger(Number(predictionValue)) || Number(predictionValue) < 0) {
+                showToast('Vui lòng nhập một số nguyên không âm hợp lệ ở câu 22!');
+                currentStep = 21;
+                showStep(currentStep);
+                return;
+            }
+
             const btn = document.getElementById('btn-nop-bai');
             const originalBtnText = btn.innerHTML;
             
@@ -1017,6 +1261,11 @@
             const formData = new FormData(this);
             let diem = 0;
             let payload = { ...userInfo };
+            // Tiền tố họ tên nằm ngay trong các trường hiện có để Apps Script cũ vẫn lưu được.
+            // Không thay đổi q1..q22, diem hay cấu trúc các trường khác.
+            if (TEST_MODE) {
+                payload.hoTen = '[TEST] ' + String(userInfo.hoTen).replace(/^\[TEST\]\s*/i, '');
+            }
             
             questions.forEach(q => {
                 const userAns = formData.get(`q${q.id}`);
@@ -1038,12 +1287,13 @@
 
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                // Để test form data tránh lỗi CORS khi dev, thường dùng mode: 'no-cors'
+                // Giữ tương thích Google Apps Script hiện tại; phản hồi opaque KHÔNG xác nhận đã lưu thành công.
                 mode: 'no-cors', 
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formBody
             })
             .then(() => {
+                // no-cors chỉ cho biết fetch hoàn tất ở phía trình duyệt; phải đối chiếu Sheets để xác nhận bài hợp lệ.
                 showResult(diem);
             })
             .catch(err => {
@@ -1076,6 +1326,7 @@
         }
 
         function showResult(diem) {
+            if (TEST_MODE) document.getElementById('result-heading').textContent = 'ĐÃ GỬI YÊU CẦU NỘP BÀI THỬ';
             switchView('view-quiz', 'view-result');
             
             // Đợi chuyển cảnh xong mới chạy đếm số cho đẹp
@@ -1084,41 +1335,51 @@
             }, 500);
         }
 
-        // --- BỘ ĐẾM NGƯỢC THỜI GIAN ---
-        function initCountdown() {
-            // Đặt mốc thời gian kết thúc (00:00 ngày 15/10/2026)
-            const targetDate = new Date('2026-10-15T00:00:00').getTime();
-
-            const timer = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                // Nếu thời gian đã trôi qua mốc kết thúc
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById('countdown-days').innerText = "00";
-                    document.getElementById('countdown-hours').innerText = "00";
-                    document.getElementById('countdown-minutes').innerText = "00";
-                    document.getElementById('countdown-seconds').innerText = "00";
-                    return;
-                }
-
-                // Tính toán thời gian
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Gán dữ liệu vào giao diện (thêm số 0 đằng trước nếu số nhỏ hơn 10)
-                document.getElementById('countdown-days').innerText = days.toString().padStart(2, '0');
-                document.getElementById('countdown-hours').innerText = hours.toString().padStart(2, '0');
-                document.getElementById('countdown-minutes').innerText = minutes.toString().padStart(2, '0');
-                document.getElementById('countdown-seconds').innerText = seconds.toString().padStart(2, '0');
-            }, 1000);
+        // --- BỘ ĐẾM NGƯỢC VÀ TRẠNG THÁI CUỘC THI (GMT+7) ---
+        function updateQuizCountdown() {
+            const now = Date.now();
+            const before = now < QUIZ_START;
+            const finished = now >= QUIZ_END_EXCLUSIVE;
+            const target = before ? QUIZ_START : QUIZ_END_EXCLUSIVE;
+            const distance = Math.max(0, target - now);
+            const days = Math.floor(distance / 86400000);
+            const hours = Math.floor((distance % 86400000) / 3600000);
+            const minutes = Math.floor((distance % 3600000) / 60000);
+            const seconds = Math.floor((distance % 60000) / 1000);
+            [['days', days],['hours',hours],['minutes',minutes],['seconds',seconds]].forEach(([field,value]) => {
+                document.getElementById('countdown-' + field).textContent = String(value).padStart(2, '0');
+            });
+            const label = document.getElementById('countdown-label');
+            label.textContent = TEST_MODE ? 'Đang bật chế độ kiểm thử' : finished ? 'Đã kết thúc nhận bài' : before ? 'Đếm ngược đến ngày mở hệ thống' : 'Đếm ngược đến khi kết thúc';
+            const registrationStatus = document.getElementById('registration-status');
+            const enterButton = document.getElementById('btn-vao-thi');
+            if (TEST_MODE) {
+                registrationStatus.textContent = 'CHẾ ĐỘ KIỂM THỬ: Cho phép làm bài và gửi dữ liệu về Google Apps Script ngay. Họ tên của mỗi bài thử được lưu với tiền tố [TEST] và phải loại khỏi kết quả xét giải.';
+                registrationStatus.classList.remove('hidden');
+                registrationStatus.classList.add('!bg-amber-100', '!border-amber-400');
+                enterButton.disabled = false;
+                enterButton.classList.remove('opacity-60', 'cursor-not-allowed');
+                enterButton.classList.add('btn-shine');
+            } else if (before || finished) {
+                registrationStatus.textContent = quizNotOpenMessage();
+                registrationStatus.classList.remove('hidden');
+                enterButton.disabled = true;
+                enterButton.classList.add('opacity-60', 'cursor-not-allowed');
+                enterButton.classList.remove('btn-shine');
+            } else {
+                registrationStatus.classList.add('hidden');
+                enterButton.disabled = false;
+                enterButton.classList.remove('opacity-60', 'cursor-not-allowed');
+                enterButton.classList.add('btn-shine');
+            }
         }
-
-        // Khởi chạy bộ đếm
-        initCountdown();
+        if (TEST_MODE) {
+            ['test-mode-banner', 'test-mode-quiz-banner', 'test-mode-result-banner'].forEach(id => {
+                document.getElementById(id).classList.remove('hidden');
+            });
+        }
+        updateQuizCountdown();
+        setInterval(updateQuizCountdown, 1000);
     </script>
 </body>
 </html>
