@@ -700,249 +700,251 @@
         // LINK APP SCRIPT (Thay thế link mới của bạn vào đây)
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOdlrtFoNQlvvXMWeh3IXQmJrw3KhSHv9sfMYHjNrTz9SPoOW9ojfCQXZcdZfBmRVKKw/exec';
 
-        // 20 câu hỏi đã được lựa chọn, rà soát theo Kế hoạch Cuộc thi
-        // Giữ nguyên khóa q1..q20 và đáp án A/B/C/D để tương thích Google Apps Script.
+        // Bộ 20 câu nâng cao tuyển chọn từ Ngân hàng 40 câu Công dân số Hòa Khánh 2026.
+        // Số câu gốc trong ngân hàng (theo thứ tự) = 2, 7, 8, 9, 10, 11, 15, 16, 17, 18, 19, 22, 25, 28, 30, 32, 35, 36, 37, 39.
+        // Các câu được biên tập lại cách diễn đạt/phương án nhiễu, giữ nội dung đáp án đúng.
+        // GIỮ NGUYÊN q1..q20, đáp án A/B/C/D và 05 điểm/câu để tương thích Apps Script.
         const questions = [
-            {
-                        "id": 1,
-                        "text": "Mục tiêu quan trọng của cải cách hành chính là gì?",
-                        "options": [
-                                    "Tăng số lượng thủ tục hành chính",
-                                    "Nâng cao hiệu lực, hiệu quả quản lý nhà nước và chất lượng phục vụ người dân, doanh nghiệp",
-                                    "Tăng thời gian xử lý hồ sơ",
-                                    "Tăng số lượng giấy tờ trong hồ sơ"
-                        ],
-                        "answer": "B",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 2,
-                        "text": "Khi hồ sơ thủ tục hành chính chưa đầy đủ theo quy định, cán bộ tiếp nhận cần xử lý thế nào?",
-                        "options": [
-                                    "Từ chối mà không giải thích lý do",
-                                    "Yêu cầu bổ sung bất kỳ giấy tờ nào cán bộ thấy cần",
-                                    "Hướng dẫn rõ thành phần hồ sơ cần bổ sung theo quy định",
-                                    "Yêu cầu người dân quay lại vào thời điểm khác"
-                        ],
-                        "answer": "C",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 3,
-                        "text": "Trong giải quyết thủ tục hành chính, việc làm nào thể hiện tinh thần lấy người dân làm trung tâm?",
-                        "options": [
-                                    "Hướng dẫn rõ ràng, đúng quy định và giải quyết đúng hạn",
-                                    "Yêu cầu người dân đi lại nhiều lần",
-                                    "Để người dân tự tìm hiểu mọi quy định",
-                                    "Chuyển trách nhiệm cho đơn vị khác"
-                        ],
-                        "answer": "A",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 4,
-                        "text": "Chỉ số nào phản ánh trực tiếp chất lượng phục vụ của cơ quan hành chính?",
-                        "options": [
-                                    "Số lượng văn bản nội bộ",
-                                    "Số cuộc họp của cơ quan",
-                                    "Số thiết bị được trang bị",
-                                    "Mức độ hài lòng của người dân, tổ chức"
-                        ],
-                        "answer": "D",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 5,
-                        "text": "Cơ quan nhà nước khai thác dữ liệu đã có để giảm việc yêu cầu người dân cung cấp lại giấy tờ. Việc này thể hiện tinh thần nào của chuyển đổi số?",
-                        "options": [
-                                    "Tăng cường sử dụng hồ sơ giấy",
-                                    "Khai thác, tái sử dụng dữ liệu theo quy định để nâng cao hiệu quả phục vụ",
-                                    "Giảm cung cấp dịch vụ công trực tuyến",
-                                    "Tăng thành phần hồ sơ thủ tục hành chính"
-                        ],
-                        "answer": "B",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 6,
-                        "text": "Khi hồ sơ gần đến hạn giải quyết nhưng phát sinh vướng mắc, cán bộ phụ trách cần làm gì?",
-                        "options": [
-                                    "Chờ đến khi hết hạn mới xử lý",
-                                    "Đợi người dân liên hệ mới giải quyết",
-                                    "Chủ động xử lý, phối hợp và kịp thời báo cáo khi có vướng mắc",
-                                    "Chuyển hồ sơ cho người khác mà không bàn giao"
-                        ],
-                        "answer": "C",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 7,
-                        "text": "Khi phát hiện quy trình giải quyết công việc có nhiều bước trung gian không cần thiết, cơ quan nên làm gì?",
-                        "options": [
-                                    "Rà soát và đề xuất đơn giản hóa theo thẩm quyền, đúng quy định",
-                                    "Giữ nguyên vì đã thực hiện nhiều năm",
-                                    "Bổ sung thêm bước kiểm tra",
-                                    "Không công khai quy trình"
-                        ],
-                        "answer": "A",
-                        "group": "Cải cách hành chính"
-            },
-            {
-                        "id": 8,
-                        "text": "Theo tinh thần Nghị quyết số 57-NQ/TW, người dân và doanh nghiệp được xác định có vai trò gì trong phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số?",
-                        "options": [
-                                    "Chỉ là đối tượng thụ hưởng",
-                                    "Chỉ là đối tượng cung cấp hồ sơ",
-                                    "Là đối tượng đứng ngoài quá trình chuyển đổi số",
-                                    "Là trung tâm, chủ thể, nguồn lực và động lực chính"
-                        ],
-                        "answer": "D",
-                        "group": "Công dân số và dịch vụ số"
-            },
-            {
-                        "id": 9,
-                        "text": "Ứng dụng VNeID chủ yếu phục vụ nội dung nào sau đây?",
-                        "options": [
-                                    "Chỉnh sửa ảnh và video",
-                                    "Định danh điện tử và sử dụng các tiện ích liên quan",
-                                    "Mua bán hàng hóa",
-                                    "Chơi trò chơi trực tuyến"
-                        ],
-                        "answer": "B",
-                        "group": "Công dân số và dịch vụ số"
-            },
-            {
-                        "id": 10,
-                        "text": "Dịch vụ công trực tuyến mang lại lợi ích thiết thực nào cho người dân?",
-                        "options": [
-                                    "Mọi hồ sơ đều được giải quyết ngay lập tức",
-                                    "Không cần cung cấp thông tin theo quy định",
-                                    "Có thể thực hiện nhiều thủ tục hành chính trên môi trường mạng, giảm thời gian đi lại",
-                                    "Không cần thực hiện thủ tục hành chính"
-                        ],
-                        "answer": "C",
-                        "group": "Công dân số và dịch vụ số"
-            },
-            {
-                        "id": 11,
-                        "text": "Trước khi xác nhận thanh toán bằng mã QR, người dùng nên làm gì?",
-                        "options": [
-                                    "Kiểm tra chính xác tên người nhận và số tiền giao dịch",
-                                    "Chỉ cần nhìn hình thức mã QR",
-                                    "Chuyển tiền trước rồi kiểm tra sau",
-                                    "Cung cấp mã OTP cho người nhận"
-                        ],
-                        "answer": "A",
-                        "group": "Công dân số và dịch vụ số"
-            },
-            {
-                        "id": 12,
-                        "text": "Tổ Công nghệ số cộng đồng có vai trò chủ yếu nào tại khu dân cư?",
-                        "options": [
-                                    "Thay cán bộ giải quyết tất cả thủ tục",
-                                    "Thu các khoản phí hành chính",
-                                    "Cấp tài khoản định danh cho toàn bộ người dân",
-                                    "Hướng dẫn, hỗ trợ người dân tiếp cận và sử dụng kỹ năng, dịch vụ số thiết yếu"
-                        ],
-                        "answer": "D",
-                        "group": "Công dân số và dịch vụ số"
-            },
-            {
-                        "id": 13,
-                        "text": "Trong chuyển đổi số, an ninh mạng, an ninh dữ liệu và an toàn thông tin có vai trò như thế nào?",
-                        "options": [
-                                    "Chỉ cần quan tâm khi xảy ra sự cố",
-                                    "Là yêu cầu xuyên suốt, không thể tách rời",
-                                    "Chỉ thuộc trách nhiệm của đơn vị cung cấp Internet",
-                                    "Không cần thiết khi dùng thiết bị cá nhân"
-                        ],
-                        "answer": "B",
-                        "group": "An toàn thông tin"
-            },
-            {
-                        "id": 14,
-                        "text": "Cách tạo mật khẩu nào giúp bảo vệ tài khoản tốt hơn?",
-                        "options": [
-                                    "Sử dụng ngày sinh làm mật khẩu",
-                                    "Dùng chung một mật khẩu cho mọi tài khoản",
-                                    "Đặt mật khẩu đủ mạnh, khó đoán và không dùng chung cho các tài khoản quan trọng",
-                                    "Công khai mật khẩu để dễ nhớ"
-                        ],
-                        "answer": "C",
-                        "group": "An toàn thông tin"
-            },
-            {
-                        "id": 15,
-                        "text": "Khi nhận được mã OTP từ ngân hàng hoặc ứng dụng, bạn cần làm gì?",
-                        "options": [
-                                    "Giữ bí mật, không cung cấp cho người khác",
-                                    "Gửi cho người tự xưng là nhân viên hỗ trợ",
-                                    "Đăng lên nhóm mạng xã hội",
-                                    "Chia sẻ cho bạn bè kiểm tra"
-                        ],
-                        "answer": "A",
-                        "group": "An toàn thông tin"
-            },
-            {
-                        "id": 16,
-                        "text": "Một người gọi điện tự xưng là cán bộ nhà nước và yêu cầu chuyển tiền ngay để xử lý hồ sơ. Bạn nên làm gì?",
-                        "options": [
-                                    "Chuyển tiền ngay để tránh chậm trễ",
-                                    "Cung cấp thông tin ngân hàng để xác minh",
-                                    "Làm theo vì người gọi biết họ tên mình",
-                                    "Không chuyển tiền và xác minh qua kênh chính thức của cơ quan có thẩm quyền"
-                        ],
-                        "answer": "D",
-                        "group": "An toàn thông tin"
-            },
-            {
-                        "id": 17,
-                        "text": "Bạn nhận được đường link thông báo trúng thưởng và yêu cầu nhập thông tin ngân hàng. Cách xử lý phù hợp là gì?",
-                        "options": [
-                                    "Truy cập ngay vì sợ hết hạn",
-                                    "Không vội truy cập, kiểm tra nguồn gửi và xác minh tính an toàn",
-                                    "Nhập thông tin ngân hàng để nhận quà",
-                                    "Chuyển tiếp cho người thân cùng tham gia"
-                        ],
-                        "answer": "B",
-                        "group": "An toàn thông tin"
-            },
-            {
-                        "id": 18,
-                        "text": "Khi sử dụng AI hỗ trợ học tập và công việc, cách làm nào phù hợp nhất?",
-                        "options": [
-                                    "Sao chép toàn bộ kết quả mà không kiểm tra",
-                                    "Cung cấp mật khẩu và thông tin bí mật cho AI",
-                                    "Sử dụng AI để hỗ trợ, kiểm chứng kết quả và bảo vệ dữ liệu cá nhân",
-                                    "Đưa mọi tài liệu nội bộ lên công cụ AI"
-                        ],
-                        "answer": "C",
-                        "group": "AI và ứng xử số"
-            },
-            {
-                        "id": 19,
-                        "text": "Khi gặp thông tin gây sốc trên mạng xã hội nhưng không rõ nguồn, công dân số nên làm gì?",
-                        "options": [
-                                    "Kiểm tra thông tin từ các nguồn chính thống, đáng tin cậy trước khi chia sẻ",
-                                    "Chia sẻ ngay để nhiều người biết",
-                                    "Khẳng định thông tin chắc chắn chính xác",
-                                    "Đăng lại vào nhiều nhóm để tăng lượt xem"
-                        ],
-                        "answer": "A",
-                        "group": "AI và ứng xử số"
-            },
-            {
-                        "id": 20,
-                        "text": "Hành động nào thể hiện đầy đủ nhất trách nhiệm của một công dân số?",
-                        "options": [
-                                    "Sử dụng nhiều mạng xã hội",
-                                    "Chỉ sử dụng điện thoại để giải trí",
-                                    "Để người khác thực hiện toàn bộ dịch vụ số thay mình",
-                                    "Chủ động sử dụng dịch vụ số, bảo vệ thông tin cá nhân, kiểm chứng thông tin và ứng xử có trách nhiệm trên môi trường mạng"
-                        ],
-                        "answer": "D",
-                        "group": "AI và ứng xử số"
-            }
+    {
+        "id": 1,
+        "text": "Chương trình tổng thể cải cách hành chính nhà nước giai đoạn 2021–2030 tập trung vào bao nhiêu nội dung chính?",
+        "options": [
+            "04 nội dung.",
+            "05 nội dung.",
+            "06 nội dung.",
+            "08 nội dung."
+        ],
+        "answer": "C",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 2,
+        "text": "Trong các trường hợp sau, trường hợp nào thể hiện đúng dịch vụ công trực tuyến toàn trình?",
+        "options": [
+            "Nộp hồ sơ qua mạng, còn trả kết quả tại bộ phận tiếp nhận.",
+            "Đặt lịch hẹn trực tuyến, rồi nộp hồ sơ và nhận kết quả tại quầy.",
+            "Gửi hồ sơ qua mạng, nhưng bắt buộc nộp lại bản giấy để xử lý.",
+            "Nộp, tiếp nhận, xử lý, thanh toán (nếu có) và trả kết quả trực tuyến."
+        ],
+        "answer": "D",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 3,
+        "text": "Đặc điểm nào phân biệt dịch vụ công trực tuyến một phần với dịch vụ công trực tuyến toàn trình?",
+        "options": [
+            "Tất cả công đoạn của thủ tục đều được thực hiện tại bộ phận tiếp nhận.",
+            "Việc tiếp nhận, giải quyết và trả kết quả đều thực hiện trực tuyến.",
+            "Có một hoặc một số công đoạn được thực hiện trên môi trường số.",
+            "Thủ tục được tiếp nhận và giải quyết hoàn toàn qua dịch vụ bưu chính."
+        ],
+        "answer": "C",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 4,
+        "text": "Thông tin của công dân đã có trong cơ sở dữ liệu và có thể chia sẻ hợp pháp. Cơ quan giải quyết thủ tục nên làm gì?",
+        "options": [
+            "Khai thác, tái sử dụng dữ liệu theo quy định, hạn chế yêu cầu nộp lại.",
+            "Yêu cầu nộp lại bản giấy đã được xác thực trên cơ sở dữ liệu để đối chiếu.",
+            "Đề nghị người dân khai lại các thông tin đã có trước khi tiếp nhận hồ sơ.",
+            "Chỉ tiếp nhận bản sao công chứng, không sử dụng dữ liệu được chia sẻ."
+        ],
+        "answer": "A",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 5,
+        "text": "Khi hồ sơ thủ tục hành chính bị giải quyết quá hạn, cách xử lý nào phù hợp?",
+        "options": [
+            "Đợi người dân khiếu nại rồi mới giải thích lý do.",
+            "Thông báo, xin lỗi và khắc phục theo quy định.",
+            "Tự gia hạn hồ sơ trên hệ thống mà không thông báo.",
+            "Hướng dẫn người dân nộp lại để tạo thời hạn mới."
+        ],
+        "answer": "B",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 6,
+        "text": "Hồ sơ, thủ tục hành chính được thực hiện trên môi trường điện tử có giá trị pháp lý như thế nào?",
+        "options": [
+            "Chỉ có giá trị khi kèm bản in có chữ ký tay của người nộp hồ sơ.",
+            "Có giá trị tham khảo nhưng phải thực hiện lại bằng hồ sơ bản giấy.",
+            "Có giá trị pháp lý theo quy định như các hình thức thực hiện hợp pháp khác.",
+            "Được tiếp nhận qua mạng nhưng mọi kết quả đều phải xác nhận lại bằng bản giấy."
+        ],
+        "answer": "C",
+        "group": "Cải cách hành chính"
+    },
+    {
+        "id": 7,
+        "text": "Nhận định nào mô tả đúng bản chất của chuyển đổi số?",
+        "options": [
+            "Tăng số lượng tài liệu được số hóa và đưa lên các hệ thống lưu trữ điện tử của cơ quan.",
+            "Trang bị thiết bị hiện đại để tăng tốc độ làm việc theo quy trình hành chính cũ.",
+            "Đổi mới quy trình, cách phục vụ dựa trên công nghệ và dữ liệu số để tạo giá trị mới cho xã hội.",
+            "Chuyển mọi giao dịch sang mạng xã hội mà không thay đổi quy trình giải quyết."
+        ],
+        "answer": "C",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 8,
+        "text": "Ba trụ cột của chuyển đổi số quốc gia là những trụ cột nào?",
+        "options": [
+            "Chính quyền số, giáo dục số và y tế số.",
+            "Nông nghiệp số, công nghiệp số và thương mại số.",
+            "Dữ liệu số, nền tảng số và công nghệ số.",
+            "Chính phủ số, kinh tế số và xã hội số."
+        ],
+        "answer": "D",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 9,
+        "text": "Theo Luật Chuyển đổi số, phát biểu nào mô tả đúng nhất về “công dân số”?",
+        "options": [
+            "Người sở hữu thiết bị thông minh và thường xuyên giao dịch qua các nền tảng trực tuyến.",
+            "Cá nhân có khả năng truy cập, sử dụng và tham gia môi trường số an toàn, hiệu quả theo pháp luật.",
+            "Người có chứng chỉ tin học và sử dụng thành thạo các phần mềm văn phòng trong công việc.",
+            "Người có tài khoản định danh điện tử và sử dụng dịch vụ công trực tuyến ít nhất một lần mỗi năm."
+        ],
+        "answer": "B",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 10,
+        "text": "Yếu tố nào phản ánh đúng năng lực số của một cá nhân?",
+        "options": [
+            "Có kiến thức, kỹ năng sử dụng công nghệ số an toàn, hiệu quả và có trách nhiệm.",
+            "Có thể sử dụng nhiều thiết bị hiện đại và cài đặt nhiều ứng dụng khác nhau.",
+            "Dành phần lớn thời gian hằng ngày để truy cập Internet và các nền tảng số.",
+            "Thao tác nhanh trên ứng dụng nhưng không cần đánh giá độ tin cậy của dữ liệu trên mạng."
+        ],
+        "answer": "A",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 11,
+        "text": "Nguyên tắc “khai báo một lần” trong quản trị, cung cấp dịch vụ số hướng tới điều gì?",
+        "options": [
+            "Mỗi người chỉ phải khai báo thông tin một lần cho mỗi thủ tục trong suốt một năm.",
+            "Tài khoản dùng để khai báo thông tin sẽ chỉ được đăng nhập một lần.",
+            "Thông tin đã khai báo sẽ bị khóa và không được sửa đổi khi có thay đổi.",
+            "Kết nối, chia sẻ và tái sử dụng dữ liệu để giảm khai báo, giấy tờ trùng lặp."
+        ],
+        "answer": "D",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 12,
+        "text": "Khi cài ứng dụng mới trên điện thoại, biện pháp nào giúp giảm nguy cơ bị đánh cắp dữ liệu?",
+        "options": [
+            "Tải từ kho ứng dụng chính thức và kiểm tra các quyền truy cập được yêu cầu.",
+            "Cài ứng dụng được gửi qua tin nhắn nếu có biểu tượng giống cơ quan nhà nước.",
+            "Tạm tắt tính năng bảo vệ thiết bị, bỏ qua cảnh báo để cài đặt ứng dụng nhanh hơn.",
+            "Cho phép truy cập mọi dữ liệu để ứng dụng ít phải xin cấp quyền lại."
+        ],
+        "answer": "A",
+        "group": "Công dân số và dịch vụ số"
+    },
+    {
+        "id": 13,
+        "text": "Xác thực hai lớp (2FA) có tác dụng chính nào đối với tài khoản trực tuyến?",
+        "options": [
+            "Bổ sung một lớp xác minh ngoài mật khẩu, giảm nguy cơ bị truy cập trái phép.",
+            "Cho phép dùng một mật khẩu chung nhưng vẫn bảo đảm an toàn cho mọi tài khoản.",
+            "Bảo đảm tài khoản không thể bị chiếm quyền dù người dùng tiết lộ mã xác minh.",
+            "Bỏ qua bước xác thực danh tính nếu thiết bị đã từng đăng nhập trước đó."
+        ],
+        "answer": "A",
+        "group": "An toàn thông tin"
+    },
+    {
+        "id": 14,
+        "text": "Một người tự xưng cán bộ gửi tệp cài đặt qua Zalo và yêu cầu cập nhật VNeID ngay. Cách xử lý phù hợp là gì?",
+        "options": [
+            "Cài tệp vừa nhận nếu số điện thoại người gửi hiển thị tên cơ quan Công an.",
+            "Mở quyền cài đặt không rõ nguồn gốc để cập nhật theo lời hướng dẫn.",
+            "Không cài tệp lạ; tải từ kho ứng dụng chính thức và xác minh qua cơ quan chức năng.",
+            "Nhờ người quen cài thử tệp trước khi quyết định có sử dụng hay không."
+        ],
+        "answer": "C",
+        "group": "An toàn thông tin"
+    },
+    {
+        "id": 15,
+        "text": "Bạn nhận được video và giọng nói rất giống người thân đang yêu cầu chuyển tiền gấp. Việc đầu tiên nên làm là gì?",
+        "options": [
+            "Tin tưởng vì hình ảnh, giọng nói trong cuộc gọi trùng khớp người quen.",
+            "Gọi lại số điện thoại quen thuộc hoặc xác minh qua một kênh độc lập.",
+            "Chuyển một khoản tiền nhỏ rồi yêu cầu người gọi xác nhận đã nhận.",
+            "Hỏi thêm qua chính cuộc gọi đó để tự đánh giá độ tin cậy của yêu cầu."
+        ],
+        "answer": "B",
+        "group": "An toàn thông tin"
+    },
+    {
+        "id": 16,
+        "text": "Kẻ gian có thể lợi dụng công nghệ DeepVoice để thực hiện hành vi lừa đảo nào sau đây?",
+        "options": [
+            "Tạo mã QR giả và chèn chúng vào các thông báo chuyển khoản trên ứng dụng ngân hàng.",
+            "Thiết kế trang web giả danh cơ quan nhà nước nhằm đánh cắp thông tin đăng nhập.",
+            "Cắt ghép hình ảnh khuôn mặt và giấy tờ tùy thân để vượt qua bước xác minh danh tính.",
+            "Giả giọng người khác để đánh lừa, yêu cầu chuyển tiền hoặc cung cấp thông tin."
+        ],
+        "answer": "D",
+        "group": "An toàn thông tin"
+    },
+    {
+        "id": 17,
+        "text": "Bạn nghi điện thoại và tài khoản ngân hàng bị chiếm quyền sau khi cài ứng dụng lạ. Cần ưu tiên biện pháp nào?",
+        "options": [
+            "Ghi lại mọi thao tác trên thiết bị, đợi ngân hàng chủ động liên hệ rồi mới thực hiện khóa tài khoản.",
+            "Xóa ứng dụng vừa cài và tiếp tục dùng tài khoản ngân hàng để kiểm tra số dư.",
+            "Đặt lại mật khẩu ngay trên điện thoại đang nghi bị chiếm quyền rồi tiếp tục giao dịch.",
+            "Liên hệ ngân hàng để khóa tài khoản, ngắt kết nối thiết bị nghi nhiễm và trình báo Công an."
+        ],
+        "answer": "D",
+        "group": "An toàn thông tin"
+    },
+    {
+        "id": 18,
+        "text": "Trong sử dụng trí tuệ nhân tạo, hiện tượng “ảo giác AI” là gì?",
+        "options": [
+            "AI tự tạm dừng trả lời khi thiếu dữ liệu hoặc khi câu hỏi không đủ rõ ràng.",
+            "AI chỉ trình bày hình ảnh trực quan khi người dùng yêu cầu văn bản.",
+            "AI tạo thông tin sai hoặc không có thật nhưng diễn đạt như thể đáng tin cậy.",
+            "AI thay đổi cách diễn đạt nhiều lần dù nội dung thông tin vẫn hoàn toàn chính xác."
+        ],
+        "answer": "C",
+        "group": "AI và ứng xử số"
+    },
+    {
+        "id": 19,
+        "text": "Muốn AI hỗ trợ soạn hướng dẫn cho người dân chính xác và dễ sử dụng, cách đặt yêu cầu nào tốt hơn?",
+        "options": [
+            "Nêu rõ mục tiêu, đối tượng, bối cảnh và định dạng kết quả mong muốn.",
+            "Chỉ nêu tên chủ đề và để AI tự xác định đối tượng, mục đích sử dụng.",
+            "Đưa nhiều từ khóa không liên quan để AI tổng hợp thành một nội dung thống nhất.",
+            "Đề nghị AI trả lời thật nhanh, không cần làm rõ dữ kiện hoặc phạm vi áp dụng."
+        ],
+        "answer": "A",
+        "group": "AI và ứng xử số"
+    },
+    {
+        "id": 20,
+        "text": "Khi hỏi Danang AI về một thủ tục hành chính, cách hỏi nào giúp nhận hướng dẫn sát nhu cầu nhất?",
+        "options": [
+            "Nêu mục đích chung nhưng không đề cập tên thủ tục cần tìm.",
+            "Yêu cầu liệt kê mọi thủ tục hành chính mà không nêu nhu cầu cụ thể.",
+            "Nêu vướng mắc cá nhân nhưng bỏ qua nơi thực hiện thủ tục.",
+            "Nêu rõ tên thủ tục và địa phương hoặc nơi áp dụng."
+        ],
+        "answer": "D",
+        "group": "AI và ứng xử số"
+    }
 ];
 
         // ?test=1: cho phép kiểm thử trước thời gian mở, KHÔNG phải cơ chế bảo mật.
